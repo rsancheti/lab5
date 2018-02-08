@@ -2,13 +2,35 @@
 
 <html>
 <head>
-	<title>My HCI Friends</title>	
+	<title>My HCI Friends</title>
+	<script src="js/jquery-1.11.0.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/hci-friends.js"></script>
+	<link rel='stylesheet' href='css/bootstrap.css'/>
+	<link rel='stylesheet' href='css/bootstrap-theme.css'/>
+	<link rel='stylesheet' href='css/hci-friends.css'/>
 	<meta charset="utf-8">
-	
+
 </head>
 
 <body>
-	<h1>My HCI Friends</h1>
+	<div class="container">
+		<h1>My HCI Friends</h1>
+		<!-- <div>
+			<img src="http://lorempixel.com/500/500/people">
+			 <h3>Random Friend</h3>
+			<p>All friends are imaginary</p>
+		</div> -->
+		{{#each friends}}
+      <div class="project" id="{{id}}">
+        <a href="project/{{name}}" class="thumbnail">
+				<p>{{description}}</p>
+        <img src="{{imageURL}}"/>
+        <a href='#' class="friend-button"><p>{{name}}</p></a>
+        </a>
+      </div>
+    {{/each}}
+
 
 	<form id="addFriendForm" role="form" method="get" action="/add">
 		<h3>Add a friend</h3>
